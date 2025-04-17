@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-04-16T19:14:06 GMT+05:30" name="Default suite" finished-at="2025-04-16T19:15:30 GMT+05:30" duration-ms="84413">
+    <groups>
+    </groups>
+    <test started-at="2025-04-16T19:14:06 GMT+05:30" name="Default test" finished-at="2025-04-16T19:15:30 GMT+05:30" duration-ms="84413">
+      <class name="POC.FirstProject.testNGRunner">
+        <test-method is-config="true" signature="baseSetup()[pri:0, instance:POC.FirstProject.testNGRunner@74ea2410]" started-at="2025-04-16T19:14:06 GMT+05:30" name="baseSetup" finished-at="2025-04-16T19:14:26 GMT+05:30" duration-ms="19998" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- baseSetup -->
+        <test-method signature="logIn()[pri:0, instance:POC.FirstProject.testNGRunner@74ea2410]" started-at="2025-04-16T19:14:26 GMT+05:30" name="logIn" finished-at="2025-04-16T19:15:30 GMT+05:30" duration-ms="64372" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logIn -->
+      </class> <!-- POC.FirstProject.testNGRunner -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
