@@ -11,8 +11,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class baseClass {
 
-	public WebDriver driver;
-	public Properties prop;
+	protected static WebDriver driver;
+	protected static Properties prop;
 
 	public void setUp() throws IOException {
 		FileInputStream file = new FileInputStream(

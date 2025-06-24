@@ -12,7 +12,6 @@ public class logIN extends utiLity {
 
 	public logIN(WebDriver driver) throws IOException {
 		super(driver);
-		setUp();// <-- this is important to initialize 'prop'
 		// TODO Auto-generated constructor stub
 		PageFactory.initElements(driver, this);
 	}
@@ -31,6 +30,12 @@ public class logIN extends utiLity {
 	@FindBy(xpath = "//input[@type='email']")
 	WebElement email;// This element finds the email input field on a web page;
 
+	@FindBy(xpath = "//input[@type='submit']")
+	WebElement continuebtn; // for continue button.
+
+	@FindBy(xpath = "//h1[contains(text(),'Looks like you are new to Amazon')]")
+	WebElement msg;
+
 	public void Login() {
 
 		WaitFor(loginIcon);
@@ -45,5 +50,12 @@ public class logIN extends utiLity {
 	public void emailCredential() {
 		WaitFor(email);
 		email.sendKeys(prop.getProperty("email"));
+		continuebtn.click();
 	}
-}
+
+	public String getDisplayedMessage() {
+		WaitFor(msg);
+		return msg.getText().trim();
+	}
+
+	}

@@ -2,7 +2,9 @@ package POC.FirstProject;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.Duration;
+import java.util.Date;
 import java.util.List;
 
 import org.apache.commons.io.FileUtils;
@@ -40,8 +42,8 @@ public class utiLity extends baseClass {
 		wait.until(ExpectedConditions.visibilityOfAllElements(ListEll));
 	}
 
-	public ExtentReports report() {
-		String path = System.getProperty("user.dir") + "//Reports//reports.html";
+	public static ExtentReports report() {
+		String path = System.getProperty("user.dir") + "//AmazoneReports//reports.html";
 		ExtentSparkReporter report = new ExtentSparkReporter(path);
 		report.config().setReportName("First Project Report");
 		report.config().setDocumentTitle("First Project");
@@ -56,14 +58,20 @@ public class utiLity extends baseClass {
 
 	public static String takeScreenShot(String testCaseName, WebDriver driver) throws IOException {
 
-		String screenShot = System.getProperty("user.dir") + "//ScreenShots" + testCaseName + "//.png";
+		// Create screenshots folder path
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
-		File destination = new File(screenShot);
+		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+		String pathSrc = System.getProperty("user.dir") + File.separator + "AmazoneReports" + File.separator
+				+ testCaseName
+				+ ".png";
+		File destination = new File(pathSrc);
 		FileUtils.copyFile(src, destination);
-		return screenShot;
-
+		System.out.println("Screenshot saved at: " + pathSrc);
+		System.out.println("Screenshot file exists: " + destination.exists());
+		return pathSrc;
 	}
+
 
 	public void hoverOver(WebElement ellement) {
 		actions.moveToElement(ellement).perform();
